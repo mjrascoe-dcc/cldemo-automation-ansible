@@ -10,6 +10,7 @@ Quickstart: Run the demo
 (This assumes you are running Ansible 1.9.4 and Vagrant 1.8.4 on your host.)
 
     git clone https://github.com/cumulusnetworks/cldemo-vagrant
+    git checkout full-reference-topology
     cd cldemo-vagrant
     vagrant up oob-mgmt-server oob-mgmt-switch leaf01 leaf02 leaf 03 leaf04 spine01 spine02 server01 server02 server03 server04
     vagrant ssh oob-mgmt-server
