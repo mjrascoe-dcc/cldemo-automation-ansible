@@ -16,6 +16,11 @@ Before running this demo, install [VirtualBox](https://www.virtualbox.org/wiki/D
     sudo su - cumulus
     git clone https://github.com/cumulusnetworks/cldemo-automation-ansible
     cd cldemo-automation-ansible
+    sed -i "s/quagga/frr/g" ./run-demo.yml 
+    mv ./roles/quagga ./roles/frr
+    sed -i "s/quagga/frr/g" ./roles/frr/tasks/main.yml ./roles/frr/handlers/main.yml
+    sed -i "s/Quagga/frr/g" ./roles/frr/tasks/main.yml 
+    mv ./roles/frr/templates/Quagga.conf.j2 ./roles/frr/templates/frr.conf.j2
     ansible-playbook run-demo.yml
     ssh server01
     wget 172.16.2.101
